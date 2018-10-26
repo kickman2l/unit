@@ -1,7 +1,7 @@
 node() {
     stage('checkout') {
         checkout(scm)
-        sh 'git clean -xdf'
+        sh 'cd unit && git clean -xdf'
     }
     stage('build and test') {
         sh './gradlew build'
